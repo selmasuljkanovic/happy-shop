@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+$fontFamily: 'Roboto', sans-serif;
+$orange: #ef7e22;
+$blue: #2080be;
+$green: #bad232;
+$text: #595a5a;
+$white: #fff;
+$darkBlue: #062d49;
+$fontSize: 16px;
+$transition: 0.3s ease-in-out;
+/******************
+mixins
+******************/
+@mixin img($bg_p, $bg_s, $height) {
+    background-position: $bg_p;
+    background-size: $bg_s;
+    height: $height;
+    background-repeat: no-repeat;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $text;
+}
+.container{
+    width: 70%;
+    margin: auto;
+}
+
+/********************
+topBar
+*********************/
+.topBar{
+    background: $blue;
+    padding: 0px;
+    .navbar-brand,
+    .nav-link{
+        color: $white;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+}
+/********************
+main Bar
+*********************/
+.mainBar{
+    padding: 0px;
+    img{
+        width: 20%;
+    }
+    .nav-link{
+        color: $text;
+        text-transform: uppercase;
+        font-size: 15px;
+        transition: $transition;
+        &:hover{
+            color: $blue;
+        }
+    }
+    i{
+        color: $orange;
+    }
+}
+/********************
+footer
+*********************/
+footer{
+    background: lightgray;
+    padding: 50px 0;
+    h6{
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    .btn{
+        font-size: 13px!important;
+        padding: 4px 7px;
+    }
+    .col-md-2,
+    .col-md-4,
+    .col-md-3{
+        font-size: 13px;
+        ul{
+            line-height: 2;
+        }
+        }
+    a{
+        color: $text;
+        i{
+            margin-right: 10px;
+            display: inline-block;
+            background: $white;
+            padding: 7px;
+            border-radius: 50%;
+            border: 1px solid $text;
+        }
+    }
+}
+/********************
+slider
+*********************/
+.slider{
+    position: relative;
+    .carousel-caption{
+        position: absolute;
+        top: 50%;
+        h5{
+            font-size: 2.5rem;
+        }
+    }
+}
+/********************
+slider popular products
+*********************/
+.popularProducts{
+    padding: 50px 0;
+    .item{
+        border:1px solid lightgray;
+        margin-top: 30px;
+    }
+}
+/********************
+New products
+*********************/
+.newProducts{
+    .row{
+        div{
+            border: 1px solid $text;
+            margin-right: 20px;
+            padding: 5px 7px;
+            margin-top: 30px;
+            a{
+                color: $text;
+                font-size: .9rem;
+                &:hover{
+                    text-decoration: none;
+                    color: $blue;
+                }
+            }
+        }
+    }
+    .item{
+        margin-top: 30px;
+        .card-body{
+            border-top: 1px solid lightgray;
+        }
+    }
+}
+/********************
+New products
+*********************/
+.product{
+    .col-md-6:first-child{
+        background: url(../img/ad1-1.jpg);
+       @include img(center, contain, 60vh);
+       flex:0 0 48%;
+    }
+    .col-md-6:last-child{
+        background: url(../img/ad2-1.jpg);
+        @include img(center, contain, 60vh);
+        flex:0 0 48%;
+    }
+    .text{
+        background: $white;
+        opacity: .8;
+        width: 50%;
+        padding: 20px;
+        position: absolute;
+        top:30%;
+        left:20%;
+        p{
+            font-size: 13px;
+        }
+        a{
+            border: 1px solid $blue;
+            border-radius: 50%;
+            padding: 4px 7px;
+            i{
+                font-size: .9rem;
+            }
+        }
+    }
+}
+/********************
+New products
+*********************/
+.urban{
+    padding-bottom: 50px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .card-body{
+        background: $blue;
+        color: $white;
+        img{
+            width: 10%;
+            margin-left: 90px;
+        }
+        p{
+            font-size: .9rem;
+        }
+        a{
+            color: $white;
+        }
+    }
+}
+/********************
+single
+*********************/
+.single{
+    .list-group{
+        a{
+        font-size: 12px;
+        color: $text;
+        font-weight: 600;
+            &:hover{
+            text-decoration: none;
+            color: $darkBlue;
+            }
+        }
+    }
+    .productOne{
+        img{
+            width: 100%;
+        }
+    }
+}
